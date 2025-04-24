@@ -14,36 +14,35 @@
             --dark: #1e1e30;
             --light: #f0f0f5;
         }
-        /* Updated container styling */
+        /* Mobile-first base styles */
+    .container {
+        width: 94%; 
+        margin: 0 auto;
+        padding: 20px;
+        flex: 1;
+    }
+    
+    /* Desktop adjustments - now properly narrower */
+    @media (min-width: 768px) {
         .container {
-            width: 94%; /* Default width for mobile */
-            margin: 0 auto;
-            padding: 20px;
-            flex: 1;
+            width: 75%; /* Reduced from previous values */
+            padding: 20px 40px;
+            max-width: 1200px; /* Optional: add if you want a maximum width */
         }
         
-        /* Desktop sizing */
-        @media (min-width: 768px) {
-            .container {
-                width: 65%; /* Wider on desktop */
-                padding: 20px 40px; /* More horizontal padding */
-            }
-            
-            /* Make input cards wider on desktop */
-            .input-card {
-                padding: 25px;
-            }
-            
-            /* Adjust chart size */
-            .chart-container {
-                height: 450px;
-            }
+        .input-card {
+            padding: 25px;
         }
         
-        /* Large desktop screens */
-        @media (min-width: 1200px) {
-            .container {
-                width: 65%; /* Even wider on large screens */
+        .chart-container {
+            height: 450px;
+        }
+    }
+    
+    /* Large desktop screens - removed duplicate 65% */
+    @media (min-width: 1200px) {
+        .container {
+            width: 65%; /* Now this will properly override the 75% */
             }
         }
         

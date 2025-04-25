@@ -356,11 +356,22 @@
         margin: 20px 0 auto;
         background-color: var(--dark); /* Match your dark theme */
     }
-
-    @media (max-width: 768px) {
+/* Desktop adjustments */
+    @media (min-width: 768px) {
         .header-image {
-            max-height: 120px; /* Slightly smaller on mobile */
-            margin-top: 15px; /* Smaller margin on mobile */
+            max-height: 150px; /* Taller on desktop */
+            width: 85%; /* Wider than content area */
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    /* Large desktop screens */
+    @media (min-width: 1200px) {
+        .header-image {
+            width: 80%; /* Even wider image */
+            max-height: 180px; /* Optional: taller if needed */
+  
         }
     }
 </style>

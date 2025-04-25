@@ -717,9 +717,7 @@
 
         // Auto-tweet functionality (Twitter only)
         function autoTweet(text) {
-            currentTweetText = text;
-            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-            const tweetWindow = window.open(tweetUrl, '_blank', 'width=550,height=420,top=100,left=100');
+           
             
             // Check if window was blocked
             if (!tweetWindow || tweetWindow.closed || typeof tweetWindow.closed == 'undefined') {
@@ -739,13 +737,11 @@
         }
         
         function showModal() {
-            document.getElementById('modalOverlay').style.display = 'block';
-            document.getElementById('tweetModal').style.display = 'block';
+        
         }
         
         function hideModal() {
-            document.getElementById('modalOverlay').style.display = 'none';
-            document.getElementById('tweetModal').style.display = 'none';
+      
         }
 
         // Fetch market data
@@ -978,10 +974,7 @@
                              `Via @cryptoshafting`;
             
             // Auto-trigger tweet (Twitter only)
-            document.getElementById('hiddenTweetBtn').onclick = () => {
-                autoTweet(tweetText);
-            };
-            document.getElementById('hiddenTweetBtn').click();
+          
             
             // Show share buttons
             shareButtons.style.display = 'flex';
@@ -1008,11 +1001,7 @@
             };
             
             // Show modal after 3 seconds if not shared
-            setTimeout(() => {
-                if (!tweetCompleted) {
-                    showModal();
-                }
-            }, 3000);
+          
         }
 
         // Select roast tier
